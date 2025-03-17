@@ -16,6 +16,7 @@ func main() {
 	// Call a function to print the task items
 	printTaskItems(taskItems)
 	addTaskItem(taskItems, "Testing add funtion written")
+	taskItems = addTaskItem(taskItems, "Running")
 }
 
 // Function to print task items
@@ -25,7 +26,7 @@ func printTaskItems(items []string) {
 	}
 }
 
-func addTaskItem(taskItems []string, newTask string) {
+func addTaskItem(taskItems []string, newTask string)([]string) {
 	var updatedTaskItem = append(taskItems, newTask)
-	printTaskItems(updatedTaskItem)
+	retun updatedTaskItem
 }
