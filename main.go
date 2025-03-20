@@ -14,9 +14,16 @@ var taskItems = []string{shortGoLang, fullGoLang, rewards}
 
 func main() {
 	// Call a function to print the task items
+	fmt.Println("Initial List:")
 	printTaskItems(taskItems)
-	addTaskItem(taskItems, "Testing add funtion written")
+
+	// Correctly update and reassign taskItems
+	taskItems = addTaskItem(taskItems, "Testing add function written")
 	taskItems = addTaskItem(taskItems, "Running")
+
+	// Print updated list
+	fmt.Println("\nUpdated List:")
+	printTaskItems(taskItems)
 }
 
 // Function to print task items
@@ -26,7 +33,7 @@ func printTaskItems(items []string) {
 	}
 }
 
-func addTaskItem(taskItems []string, newTask string)([]string) {
-	var updatedTaskItem = append(taskItems, newTask)
-	retun updatedTaskItem
+// Function to add a new task item and return updated slice
+func addTaskItem(taskItems []string, newTask string) []string {
+	return append(taskItems, newTask)
 }
